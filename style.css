@@ -3,7 +3,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #130961ee;
     color: #fff;
     padding: 10px;
 }
@@ -38,7 +38,28 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #5fb300;
 }
 
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+    /* Add more font formats (e.g., .woff, .woff2) if necessary */
+    
+}
+
+@font-face {
+    font-family: 'Jersey 20';
+    src: url('/Jersey20-Regular.ttf') format('truetype');
+    /* Add more font formats (e.g., .woff, .woff2) if necessary */
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.h1 {
+    font-family: 'Jersey 20', sans-serif;
+}
 /* Add more styles as needed */
