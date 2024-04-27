@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie & TV Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
     <header>
-        <h1 class = "h1">Movie & TV Tracker</h1>
+        <h1 class="h1">Movie & TV Tracker</h1>
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -17,13 +19,13 @@
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="recommendations.html">Recommendations</a></li>
             </ul>
-           
+
         </nav>
         <input type="text" id="searchInput" placeholder="Search...">
         <button id="searchBtn">Search</button>
         <button id="loginBtn">Log In</button>
         <button id="signupBtn">Sign Up</button>
-        
+
     </header>
 
     <main>
@@ -35,83 +37,120 @@
 
 
 
-<h1>My Watchlist</h1>
-<h3>Genres</h3>
-<button type="button">Action</button> 
-<button type="button">Sci-Fi</button> 
-<button type="button">Comedy</button>
+    <h1>My Watchlist</h1>
+    <h3>Genres</h3>
+    <button type="button">Action</button>
+    <button type="button">Sci-Fi</button>
+    <button type="button">Comedy</button>
+    <button type="button" id="resetFilter">Show All</button>
 
-<h3>Movies</h3>
+    <h3>Movies</h3>
 
-<h4>Want to Watch</h4>
+    <h4>Want to Watch</h4>
 
-<ul id="WantList"> 
-    <li id="Dune">
-        <label for="checkbox1">Dune</label>
-        <input type='button' id="WatchMark" onclick='onclickHandler(event)' value='Mark As Watched' />
-    </li>
 
-    <li>
-        <label for="checkbox2">Spider-man</label>
-        <input type="checkbox" id=""checkbox1" name ="checkbox2">
-    </li>
+    <ul>
+        <li>
+            <label for="checkbox1"><a href="dune.html">Dune</a></label>
+            <input type="checkbox" data-type="wtw" data-genre="Sci-Fi" id="checkbox1" name="checkbox1">
+        </li>
 
-    <li>
-        <label for="checkbox3">Kung Fu Panda 4</label>
-        <input type="checkbox" id=""checkbox3" name ="checkbox3">
-    </li>
+        <li>
+            <label for="checkbox2"><a href="spiderman.html">Spider-man</a></label>
+            <input type="checkbox" data-type="wtw" data-genre="Action" id="checkbox2" name="checkbox2">
+        </li>
 
-</ul>
+        <li>
+            <label for="checkbox3"><a href="KungFuPanda4.html">Kung Fu Panda 4</a></label>
+            <input type="checkbox" data-type="wtw" data-genre="Comedy" id="checkbox3" name="checkbox3">
+        </li>
 
-<h4>Watched</h4>
-
-<ul id="WatchedList"> 
-    <li>addItem('Dune');</li>
-
-    <li>Captain America</li>
-    
-    <li> Interstellar</li>
-    
-    <li>50 First Dates</li>
-
-</ul>
-
-<h3>TV Shows</h3>
-
-<h4>Want to Watch</h4>
-
-<ul> 
-    <li>
-        <label for="checkbox1">Sherlock</label>
-        <input type="checkbox" id=""checkbox1" name ="checkbox1">
-    </li>
-
-    <li>
-        <label for="checkbox2">Loki</label>
-        <input type="checkbox" id=""checkbox1" name ="checkbox2">
-    </li>
-
-    <li>
-        <label for="checkbox3">Severance</label>
-        <input type="checkbox" id=""checkbox3" name ="checkbox3">
-    </li>
     </ul>
 
-<h4>Watched</h4>
+    <h4>Watched</h4>
 
-<ul> 
-    <li>Outer Banks</li>
-    
-    <li>Fleabag</li>
-    
-    <li>Ripley</li>
+    <ul id="watched">
+        <li>Captain America</li>
 
-</ul>
+        <li> Interstellar</li>
 
-<footer>
-    &copy; 2024 Movie & TV Tracker
-</footer>
+        <li>50 First Dates</li>
 
-<script src="script.js"></script>
+    </ul>
+
+    <h3>TV Shows</h3>
+
+    <h4>Want to Watch</h4>
+
+    <ul id="wtw2">
+        <li>
+            <label for="checkbox1">Sherlock</label>
+            <input type="checkbox" data-type="wtw2" id="checkbox4" name="checkbox4">
+        </li>
+
+        <li>
+            <label for="checkbox2">Loki</label>
+            <input type="checkbox" data-type="wtw2" id="checkbox5" name="checkbox5">
+        </li>
+
+        <li>
+            <label for="checkbox3">Severance</label>
+            <input type="checkbox" data-type="wtw2" id="checkbox6" name="checkbox6">
+        </li>
+    </ul>
+
+    <h4>Watched</h4>
+
+    <ul id="watched2">
+        <li>Outer Banks</li>
+
+        <li>Fleabag</li>
+
+        <li>Ripley</li>
+
+    </ul>
+
+    <footer>
+        &copy; 2024 Movie & TV Tracker
+    </footer>
+
+    <script>
+
+        const wtw = document.querySelectorAll('[data-type="wtw"]');
+        const watched = document.getElementById('watched');
+        wtw.forEach(element => {
+            element.addEventListener('change', () => {
+                if (element.checked === true) {
+                    console.log(element);
+                    let text = element.parentElement.childNodes[1].textContent;
+                    let li = document.createElement('li');
+                    li.textContent = text;
+                    watched.appendChild(li);
+                    element.parentElement.remove();
+                }
+            })
+        });
+
+        const wtw2 = document.querySelectorAll('[data-type="wtw2"]');
+        const watched2 = document.getElementById('watched2');
+        wtw2.forEach(element => {
+            console.log(element);
+            element.addEventListener('change', () => {
+                if (element.checked === true) {
+                    let text = element.parentElement.childNodes[1].textContent;
+                    let li = document.createElement('li');
+                    li.textContent = text;
+                    watched2.appendChild(li);
+                    element.parentElement.remove();
+                }
+            })
+
+        });
+
+
+        
+    </script>
+
 </body>
+
 </html>

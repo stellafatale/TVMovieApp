@@ -30,11 +30,12 @@ input[type="text"] {
 }
 
 button {
-    background-color: #307bcc;
+    background-color: #2377d1;
     color: #fff;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 button:hover {
