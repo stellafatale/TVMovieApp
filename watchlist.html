@@ -53,16 +53,19 @@
         <li>
             <label for="checkbox1"><a href="dune.html">Dune</a></label>
             <input type="checkbox" data-type="wtw" data-genre="Sci-Fi" id="checkbox1" name="checkbox1">
+            <button class="favorite-btn">Add to Favorites</button>
         </li>
 
         <li>
-            <label for="checkbox2"><a href="spiderman.html">Spider-man</a></label>
+            <label for="checkbox2"><a href="./movies/spiderman.html">Spider-man</a></label>
             <input type="checkbox" data-type="wtw" data-genre="Action" id="checkbox2" name="checkbox2">
+            <button class="favorite-btn">Add to Favorites</button>
         </li>
 
         <li>
             <label for="checkbox3"><a href="KungFuPanda4.html">Kung Fu Panda 4</a></label>
             <input type="checkbox" data-type="wtw" data-genre="Comedy" id="checkbox3" name="checkbox3">
+            <button class="favorite-btn">Add to Favorites</button>
         </li>
 
     </ul>
@@ -114,42 +117,9 @@
         &copy; 2024 Movie & TV Tracker
     </footer>
 
-    <script>
+<script src="watched.js"></script>
 
-        const wtw = document.querySelectorAll('[data-type="wtw"]');
-        const watched = document.getElementById('watched');
-        wtw.forEach(element => {
-            element.addEventListener('change', () => {
-                if (element.checked === true) {
-                    console.log(element);
-                    let text = element.parentElement.childNodes[1].textContent;
-                    let li = document.createElement('li');
-                    li.textContent = text;
-                    watched.appendChild(li);
-                    element.parentElement.remove();
-                }
-            })
-        });
-
-        const wtw2 = document.querySelectorAll('[data-type="wtw2"]');
-        const watched2 = document.getElementById('watched2');
-        wtw2.forEach(element => {
-            console.log(element);
-            element.addEventListener('change', () => {
-                if (element.checked === true) {
-                    let text = element.parentElement.childNodes[1].textContent;
-                    let li = document.createElement('li');
-                    li.textContent = text;
-                    watched2.appendChild(li);
-                    element.parentElement.remove();
-                }
-            })
-
-        });
-
-
-        
-    </script>
+<script src="favorites.js"></script>
 
 </body>
 
