@@ -5,21 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie & TV Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
-
     <header>
         <h1 class="h1">Movie & TV Tracker</h1>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="watchlist.html">My Watchlist</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="recommendations.html">Recommendations</a></li>
+                <li><a href="/home.html">Home</a></li>
+                <li><a href="/watchlist.html">My Watchlist</a></li>
+                <li><a href="/profile.html">Profile</a></li>
+                <li><a href="/recommendations.html">Recommendations</a></li>
             </ul>
-
         </nav>
         <input type="text" id="searchInput" placeholder="Search...">
         <button id="searchBtn">Search</button>
@@ -27,99 +25,72 @@
         <button id="signupBtn">Sign Up</button>
 
     </header>
-
     <main>
         <section id="searchResults">
             <!-- Search results will be displayed here -->
         </section>
+        <h1>My Watchlist</h1>
+        <h3>Genres</h3>
+        <button type="button">Action</button>
+        <button type="button">Sci-Fi</button>
+        <button type="button">Comedy</button>
+        <button type="button" id="resetFilter">Show All</button>
+        <h3>Movies</h3>
+        <h4>Want to Watch</h4>
+        <ul>
+            <li>
+                <label for="checkbox1"><a href="movies/dune.html">Dune</a></label>
+                <input type="checkbox" data-type="wtw" data-genre="Sci-Fi" id="checkbox1" name="checkbox1">
+                <button class="favorite-btn">Add to Favorites</button>
+            </li>
+            <li>
+                <label for="checkbox2"><a href="/movies/spiderman.html">Spider-man</a></label>
+                <input type="checkbox" data-type="wtw" data-genre="Action" id="checkbox2" name="checkbox2">
+                <button class="favorite-btn">Add to Favorites</button>
+            </li>
+            <li>
+                <label for="checkbox3"><a href="movies/KungFuPanda4.html">Kung Fu Panda 4</a></label>
+                <input type="checkbox" data-type="wtw" data-genre="Comedy" id="checkbox3" name="checkbox3">
+                <button class="favorite-btn">Add to Favorites</button>
+            </li>
+
+        </ul>
+        <h4>Watched</h4>
+        <ul id="watched">
+            <li>Captain America</li>
+            <li> Interstellar</li>
+            <li>50 First Dates</li>
+        </ul>
+        <h3>TV Shows</h3>
+        <h4>Want to Watch</h4>
+        <ul id="wtw2">
+            <li>
+                <label for="checkbox1">Sherlock</label>
+                <input type="checkbox" data-type="wtw2" id="checkbox4" name="checkbox4">
+            </li>
+            <li>
+                <label for="checkbox2">Loki</label>
+                <input type="checkbox" data-type="wtw2" id="checkbox5" name="checkbox5">
+            </li>
+            <li>
+                <label for="checkbox3">Severance</label>
+                <input type="checkbox" data-type="wtw2" id="checkbox6" name="checkbox6">
+            </li>
+        </ul>
+        <h4>Watched</h4>
+        <ul id="watched2">
+            <li>Outer Banks</li>
+            <li>Fleabag</li>
+            <li>Ripley</li>
+
+        </ul>
     </main>
-
-
-
-
-    <h1>My Watchlist</h1>
-    <h3>Genres</h3>
-    <button type="button">Action</button>
-    <button type="button">Sci-Fi</button>
-    <button type="button">Comedy</button>
-    <button type="button" id="resetFilter">Show All</button>
-
-    <h3>Movies</h3>
-
-    <h4>Want to Watch</h4>
-
-
-    <ul>
-        <li>
-            <label for="checkbox1"><a href="dune.html">Dune</a></label>
-            <input type="checkbox" data-type="wtw" data-genre="Sci-Fi" id="checkbox1" name="checkbox1">
-            <button class="favorite-btn">Add to Favorites</button>
-        </li>
-
-        <li>
-            <label for="checkbox2"><a href="./movies/spiderman.html">Spider-man</a></label>
-            <input type="checkbox" data-type="wtw" data-genre="Action" id="checkbox2" name="checkbox2">
-            <button class="favorite-btn">Add to Favorites</button>
-        </li>
-
-        <li>
-            <label for="checkbox3"><a href="KungFuPanda4.html">Kung Fu Panda 4</a></label>
-            <input type="checkbox" data-type="wtw" data-genre="Comedy" id="checkbox3" name="checkbox3">
-            <button class="favorite-btn">Add to Favorites</button>
-        </li>
-
-    </ul>
-
-    <h4>Watched</h4>
-
-    <ul id="watched">
-        <li>Captain America</li>
-
-        <li> Interstellar</li>
-
-        <li>50 First Dates</li>
-
-    </ul>
-
-    <h3>TV Shows</h3>
-
-    <h4>Want to Watch</h4>
-
-    <ul id="wtw2">
-        <li>
-            <label for="checkbox1">Sherlock</label>
-            <input type="checkbox" data-type="wtw2" id="checkbox4" name="checkbox4">
-        </li>
-
-        <li>
-            <label for="checkbox2">Loki</label>
-            <input type="checkbox" data-type="wtw2" id="checkbox5" name="checkbox5">
-        </li>
-
-        <li>
-            <label for="checkbox3">Severance</label>
-            <input type="checkbox" data-type="wtw2" id="checkbox6" name="checkbox6">
-        </li>
-    </ul>
-
-    <h4>Watched</h4>
-
-    <ul id="watched2">
-        <li>Outer Banks</li>
-
-        <li>Fleabag</li>
-
-        <li>Ripley</li>
-
-    </ul>
-
     <footer>
         &copy; 2024 Movie & TV Tracker
     </footer>
 
-<script src="watched.js"></script>
-
-<script src="favorites.js"></script>
+    <script src="/assets/js/watched.js"></script>
+    <script src="/assets/js/favorites.js"></script>
 
 </body>
 
